@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+body {
+    background: rgb(42, 43, 44);
+    color: rgb(203,204,205);
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+}
+section#gamefield {
+
+}
+

@@ -1,0 +1,1 @@
+gamefield = getElementById('gamefield');
