@@ -2,10 +2,35 @@
 body {
     background: rgb(42, 43, 44);
     color: rgb(203,204,205);
+
+    font-size: 1.4em;
     font-family: Montserrat, sans-serif;
     font-weight: 300;
 }
-section#gamefield {
 
+/*  */
+nav#leetleMenu {
+    color: rgb(203,204,205);
+}
+nav#leetleMenu .border {
+    background: black;
+    border: 1px solid rgb(203,204,205);
+    padding: .2em;
+    margin: .1em;
 }
 
+/* Viewport - the graphics */
+section#viewport {
+    color: rgb(203,204,205);
+}
+section#viewport .border {
+    border: 1px solid rgb(203,204,205);
+}
+
+/*  */
+section#viewport {
+    color: rgb(203,204,205);
+}
+section#viewport .border {
+    border: 1px solid rgb(203,204,205);
+}
