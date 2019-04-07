@@ -38,5 +38,5 @@ const ElementServer = {
 
 
 const ws = {
-  //
+  worldExists: true,
 };
