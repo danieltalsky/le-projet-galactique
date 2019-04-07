@@ -1,0 +1,24 @@
+{
+  "name": "le-projet-galactique",
+  "version": "1.0.0",
+  "description": "This is a semi-tippy-top-secret project but obviously not that secret.",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieltalsky/le-projet-galactique.git"
+  },
+  "author": "Daniel Talsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieltalsky/le-projet-galactique/issues"
+  },
+  "homepage": "https://github.com/danieltalsky/le-projet-galactique#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
