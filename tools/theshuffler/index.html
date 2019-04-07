@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Le Projet Galactique - shuffletool</title>
+  <meta name="description" content="Le Projet Galactique - shuffletool">
+  <meta name="author" content="Christopher Hayes">
+  <meta name="author" content="Daniel Talsky">
+
+  <link rel="stylesheet" href="css/I-can-smell-the-colors.css?v=1.0">
+</head>
+
+<body>
+<div id="all-the-stuff">
+  <div class="column">
+    <h1>The Shuffler</h1>
+
+    <div><button id="the-actual-shuffler">Shuffle</button></div>
+
+    <section id="shuffle-results">
+      <h2 id="display-title">Things</h2>
+
+      <section id="display-card">
+          Thing With Bling
+      </section>
+    </section>
+  </div>
+
+  <div class="column">
+    <h2>Make Your Shuffle</h2>
+
+    <section class="piece">
+      <label for="shuffle-title">Title</label>
+      <input type="text" class="formfield" id="shuffle-title" name="shuffle-title" value="Things">
+    </section>
+
+    <section id="cards">
+      <section class="piece">
+        <label for="shuffle-title">Shuffle Card</label>
+        <textarea class="shuffle-card border" rows="3">Thing With Bling</textarea>
+      </section>
+
+
+      <section class="piece">
+        <label for="shuffle-title">Shuffle Card</label>
+        <textarea class="shuffle-card border" rows="3">Swing Thing</textarea>
+      </section>
+      
+    </section>  
+
+    <section class="piece button">
+    <button type="button" id="add-another-card">Add Another Shuffle Card</button>
+    </section>
+
+    <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+    <div style="text-align: center">↓</div>
+
+    <form role="form" method="post">
+    <section class="piece button">
+        <button type="submit" id="submit-your-shuffle">Submit Your Shuffle to the Master Shuffle Database, of Death!</button><span id="ajax-result">&nbsp;</span>
+    </section>
+    <section class="piece">
+        <label for="username">username, of death</label>
+        <input type="text" id="username" name="username" placeholder="username" class="form-control" autocomplete="username">
+    </section>
+    <section class="piece">
+        <label for="username">password, of death</label>
+        <input type="password" id="password" name="password" placeholder="password" class="form-control" autocomplete="password">
+    </section>
+  </form>    
+
+  </div>
+
+</div>
+
+<section id="easy-dom-collection" style="display:none;">
+    <section id="shuffle-card-prototype">
+        <label for="shuffle-title">Shuffle Card</label>
+        <textarea class="shuffle-card border" rows="3"></textarea>
+    </section>  
+</section>
+
+<script src="js/shuffle-magic.js"></script>
+</body>
+</html>

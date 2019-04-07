@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+body {
+    background: rgb(42, 43, 44);
+    color: rgb(203,204,205);
+
+    font-size: 1.4em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+}
+a {
+    color: #FFFFCC;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    text-shadow: .1em .1em .1em #FFFFCC;
+}
+
+#all-the-stuff {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+
+    padding: 0 1em;
+}
+.border {
+    background: black;
+    border: 1px solid rgb(203,204,205);
+    padding: .2em;
+    margin: .1em;
+}
+
+
+
+
+.piece {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+label {
+    display: block;
+    margin-bottom: .1em;
+    font-size: .8em;
+    font-variant: small-caps;
+    text-align: right;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+input, textarea {
+    font-family: Montserrat, sans-serif;
+    background: black;
+    color: rgb(203,204,205);
+    border: 1px solid rgb(203,204,205);
+    width: 100%;    
+    font-size: 1.3em;
+    padding: .2em;
+}
+input#shuffle-title {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+.button {
+    text-align: center;
+}
+button {
+    background: rgb(42, 43, 44);
+    color: rgb(203,204,205);
+    border: 1px solid rgb(203,204,205);
+    box-shadow: .08em .08em .05em white;
+    padding: .4em;
+    border-radius: .6em;
+    margin: 0 1em;
+    font-size: 1.1em;
+}
+button:active {
+    box-shadow: 0 0 0 white;
+    transform: translateY(.1em) translatex(.1em);
+}
+button:focus {outline:0;}
