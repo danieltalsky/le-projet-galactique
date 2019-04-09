@@ -3,9 +3,11 @@
  */
 import {
   DOMStage as dom,
-  // ElementServer as es,
+  ElementServer as es,
   WorldState as ws,
-} from './all-your-library-are-belong';
+} from './all-your-library-are-belong.js';
 
-dom.setTheScene();
-ws.makeAUniverse();
+document.addEventListener('DOMContentLoaded', (e) => {
+  dom.setTheScene(es);
+  // ws.makeAUniverse();
+});

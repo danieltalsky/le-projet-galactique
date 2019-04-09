@@ -1,15 +1,15 @@
 /* element server */
 const DOMStage = {
 
-  setTheScene() {
-    const leetleMenu = this.leetleMenu();
+  setTheScene(es) {
+    const leetleMenu = this.leetleMenu(es);
     const viewport = this.viewport();
     const readout = this.readout();
   },
 
-  leetleMenu() {
+  leetleMenu(es) {
     const leetleMenu = document.getElementById('leetleMenu');
-    leetleMenu.prepend(this.makeDiv('leetleMenuBorder', 'border', 'cleek me eventually'));
+    leetleMenu.prepend(es.makeDiv('leetleMenuBorder', 'border', 'cleek me eventually'));
     return leetleMenu;
   },
 
@@ -36,7 +36,8 @@ const ElementServer = {
   },
 };
 
-
-const ws = {
+const WorldState = {
   worldExists: true,
 };
+
+export { DOMStage, ElementServer, WorldState } 
