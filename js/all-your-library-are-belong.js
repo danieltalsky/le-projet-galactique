@@ -2,28 +2,72 @@
 const DOMStage = {
 
   setTheScene(es) {
-    const leetleMenu = this.leetleMenu(es);
-    const viewport = this.viewport();
-    const readout = this.readout();
+    this.es = es;
+
+    this.makeLeetleMenu();
+    this.makeViewport();
+    this.makeReadout();
   },
 
-  leetleMenu(es) {
+  makeLeetleMenu() {
     const leetleMenu = document.getElementById('leetleMenu');
-    leetleMenu.prepend(es.makeDiv('leetleMenuBorder', 'border', 'cleek me eventually'));
+    leetleMenu.textContent = '';
+    leetleMenu.prepend(this.es.makeDiv('leetleMenuContent', 'content', 'cleek me eventually'));
     return leetleMenu;
   },
 
-  viewport() {
+  makeViewport() {
     const viewport = document.getElementById('viewport');
+    viewport.textContent = '';
+    viewport.prepend(this.es.makeDiv('viewportContent', 'content', ''));
     return viewport;
   },
 
-  readout() {
+  makeReadout() {
     const readout = document.getElementById('readout');
-    readout.textContent = 'Some Magic Has Happened!';
+    readout.textContent = '';
+    readout.prepend(this.es.makeDiv('readoutContent', 'content', 'Some Magic Has Happened!'));
     return readout;
   },
 };
+
+class ScreenComponent {
+  constructor(outerElementId, contentElementId) {
+    this.outerElementId = outerElementId;
+    this.contentElementId = contentElementId;
+  }
+
+  create() {
+    this.outerElementId = '';
+    this.contentElementId = '';
+  }
+
+  clear() {
+    this.contentElement.innerHTML = '';
+  }
+
+  addContent(content) {
+    this.contentElement.append(content);
+  }
+}
+
+class leetleMenu extends ScreenComponent {
+  constructor() {
+    super('', '');
+  }
+}
+
+class viewport extends ScreenComponent {
+  constructor() {
+    super('', '');
+  }
+}
+
+class readout extends ScreenComponent {
+  constructor() {
+    super('', '');
+  }
+}
 
 const ElementServer = {
 

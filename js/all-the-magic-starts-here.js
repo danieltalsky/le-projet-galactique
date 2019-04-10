@@ -5,9 +5,9 @@ import {
   DOMStage as dom,
   ElementServer as es,
   WorldState as ws,
-} from './all-your-library-are-belong.js';
+} from '/js/all-your-library-are-belong.js';
 
-document.addEventListener('DOMContentLoaded', (e) => {
+document.addEventListener('DOMContentLoaded', () => {
   dom.setTheScene(es);
   // ws.makeAUniverse();
 });
