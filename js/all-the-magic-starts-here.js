@@ -3,11 +3,18 @@
  */
 import {
   DOMStage as dom,
-  ElementServer as es,
   WorldState as ws,
+  LeetleMenu,
+  Viewport,
+  Readout,
 } from '/js/all-your-library-are-belong.js';
 
+
+const leetleMenu = new LeetleMenu();
+const viewport = new Viewport();
+const readout = new Readout();
+
 document.addEventListener('DOMContentLoaded', () => {
-  dom.setTheScene(es);
-  // ws.makeAUniverse();
+  dom.setTheScene(leetleMenu, viewport, readout);
+  ws.makeAUniverse();
 });

@@ -11,15 +11,32 @@ body {
     font-family: Montserrat, sans-serif;
     font-weight: 300;
 
-    display: flex;
-    min-height: 100vh;
-    height: 100vh;
-    flex-direction: column;
+    min-height: 99vh;
+    height: 99vh;
 }
+
+a {
+    color: rgb(203,204,205);
+    text-decoration: none;
+    text-shadow: 2px 2px 3px rgb(203,204,205);
+}
+a:hover {
+    color: rgb(203,204,205);
+    text-shadow: 3px 3px 2px white;
+}
+a:visited {
+    color: rgb(203,204,205);
+}
+
 
 /* The Menu, probably temporary */
 nav#leetleMenu {
     color: rgb(203,204,205);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
     height: 10vh;
     display: block;
 }
@@ -27,6 +44,7 @@ nav#leetleMenu .content {
     background: black;
     border: 1px solid rgb(203,204,205);
     height: 100%;
+    min-height: 100%;
     padding: .2em;
 }
 
@@ -62,14 +80,18 @@ nav#leetleMenu .content {
 /* Viewport - the graphics */
 section#viewport {
     color: rgb(203,204,205);
-    height: 25vh;
-    min-height: 25vh;
-    display: block;
-    width: 100%;
-    animation: openAndBlink 1.5s;
+    
+    position: absolute;
+    top: 10vh;
+    min-height: 35vh;
+    height: 35vh;
+    left: 0;
+    right: 0;
+
+    /* animation: openAndBlink 1.5s; */
 }
 section#viewport .content {
-    background: black;
+    background: rgb(12, 0, 28);
     border: 1px solid rgb(203,204,205);
     
     padding: .2em;
@@ -98,10 +120,14 @@ section#viewport .content {
 /* Readout - the words */
 section#readout {
     color: rgb(203,204,205);
-    display: block;
+    
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 45vh;
+    bottom: 0;
 
-    flex: 1;
-    animation: lateFade 1.5s;
+    /* animation: lateFade 1.5s; */
 }
 section#readout .content {
     background: black;
@@ -109,6 +135,7 @@ section#readout .content {
 
     padding: .2em;
     
-    height: 80%;
-    min-height: 80%;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: auto;
 }
