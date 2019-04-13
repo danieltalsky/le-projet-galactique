@@ -143,7 +143,7 @@ class Readout extends ScreenComponent {
     super('readout', 'readoutContent');
 
     this.possibleThingsOnAPlanet = {
-      agency: 'You find a mysterious complex of buildings with no doors or windows.  You look behind them, and find, in arrays of giant containers, {1} and {2}. ',
+      agency: 'You find a mysterious complex of buildings with no doors or windows.  They are hundreds of meters wide, but you walk behind them to see what\'s there.  You find, in arrays of giant containers, {1} and {2}. ',
       natural: 'The planet is empty, but you explore many of its natural features, most notably a {1} bordered by a {2}. ',
       cave: 'You find a deep cave, with mineable veins of {1} and {2}. ',
       ocean: 'There is a giant ocean.  A weather system of {1} is ending and a weather system of {2} is beginning. ',
@@ -621,16 +621,11 @@ class Readout extends ScreenComponent {
           'bayou',
           'lake bed',
           'land-tied island',
-          'beaver pond',
           'chott',
           'ocean trench',
           'saline pan',
           'quarry',
           'quicksand bed',
-          'cotton plantation',
-          'fish farm',
-          'fish hatchery',
-          'rice field',
           'shore',
           'spit',
           'bajada',
@@ -835,43 +830,6 @@ class Readout extends ScreenComponent {
           'herb and fern layer',
           'litter layer',
           'anchialine pool',
-          'human house',
-          'domestic garden',
-          'indoor kitchen',
-          'bathroom',
-          'living room',
-          'patio',
-          'indoor toilet',
-          'room',
-          'lava flow',
-          'boundary wall',
-          'fence',
-          'building envelope',
-          'ceiling',
-          'building roof',
-          'building floor',
-          'brick building floor',
-          'wooden building floor',
-          'concrete building floor',
-          'sandy building floor',
-          'glass building floor',
-          'dung building floor',
-          'stone building floor',
-          'thatched exterior wall',
-          'stone exterior wall',
-          'straw exterior wall',
-          'mud exterior wall',
-          'pole-reinforced mud exterior wall',
-          'brick exterior wall',
-          'burnt-brick exterior wall',
-          'unburnt-brick exterior wall',
-          'concrete exterior wall',
-          'sheet-iron exterior wall',
-          'sheet-iron building roof',
-          'thatched building roof',
-          'wooden building roof',
-          'asbestos building roof',
-          'tiled building roof',
           'latrine pit',
           'outhouse',
           'covered pit latrine',
@@ -933,33 +891,8 @@ class Readout extends ScreenComponent {
           'geothermally heated river',
           'biocrust',
           'soil biocrust',
-          'open animal house',
-          'closed animal house',
-          'petting zoo',
-          'abattoir',
-          'knackery',
           'day care building',
           'fish processing building',
-          'nursing home',
-          'residential building',
-          'restaurant',
-          'dedicated campground',
-          'impromptu campground',
-          'primary atmosphere',
-          'secondary atmosphere',
-          'tertiary atmosphere',
-          'constructed swimming pool',
-          'private swimming pool',
-          'public swimming pool',
-          'water intake',
-          'cafeteria',
-          'delicatessen',
-          'take-out restaurant',
-          'kiosk',
-          'food kiosk',
-          'grocery store',
-          'agricultural fairground',
-          'ethnic food shop',
           'hypereutrophic lake',
           'hypersaline lake',
           'humic lake',
@@ -1048,8 +981,14 @@ class Readout extends ScreenComponent {
 
   displayPlanetText() {
     this.clear();
-    this.addContent(ElementServer.makeDiv(null, 'message', 'You visit a brand new planet.'));
-    this.addContent(ElementServer.makeActionLink(null, 'actionLink', 'Visit another one?', 'visitPlanets'));
+
+    const planetPrefixes = 'tork elsa khakhakhan norresco chalamar solarwinds planetX uncatalogued obispa remote dark oblate cryonic winnebago test gravity experiment krakatoa spice'.split(' ');
+    const planetSuffixes = 'six four 039472993 00002403 604032 timestamp vidal planet spheroid juggernaut place dev [classified]'.split('');
+    const planetPrefix = planetPrefixes[Math.floor(Math.random() * planetPrefixes.length)];
+    const planetSuffix = planetSuffixes[Math.floor(Math.random() * planetSuffixes.length)];
+
+    this.addContent(ElementServer.makeDiv(null, 'message', `You visit a brand new planet called ${planetPrefix} ${planetSuffix}. `));
+    this.addContent(ElementServer.makeActionLink(null, 'actionLink', 'Take off and visit a different planet? ... ', 'visitPlanets'));
     this.addContent(ElementServer.makeActionLink(null, 'actionLink', 'or land on the planet and explore?', 'visitLocation'));
   }
 
@@ -1067,7 +1006,7 @@ class Readout extends ScreenComponent {
 
     this.addContent(ElementServer.makeDiv(null, 'message', displayText));
 
-    this.addContent(ElementServer.makeActionLink(null, 'actionLink', 'Visit another one? ', 'visitLocation'));
+    this.addContent(ElementServer.makeActionLink(null, 'actionLink', 'Walk around some more on this planet? ... ', 'visitLocation'));
     this.addContent(ElementServer.makeActionLink(null, 'actionLink', 'or visit another planet? ', 'visitPlanets'));
   }
 }
