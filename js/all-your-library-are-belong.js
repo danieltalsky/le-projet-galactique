@@ -76,8 +76,8 @@ const WorldState = {
       DOMStage.viewport.clear();
       DOMStage.viewport.createLandscape();
       DOMStage.viewport.makeCitizenAppear();
-      this.citizen = new AlienCreature();
-      DOMStage.readout.displayCitizenText(this.citizen);
+      const citizen = new AlienCreature();
+      DOMStage.readout.displayCitizenText(citizen);
     },
   },
 
@@ -221,6 +221,7 @@ class Readout extends ScreenComponent {
   displayCitizenText(citizen) {
     this.clear();
     this.addContent(ElementServer.makeDiv(null, 'message', citizen.describe()));
+    this.addContent(ElementServer.makeDiv(null, 'message', citizen.talk()));
     this.addContent(ElementServer.makeDiv(null, 'message', citizen.makeActionLink(
       'speakToTheCitizen', 'actionLink', 'Say to the citizen, "Do you speak galactic standard?', 'askCitizenAboutLanguage',
     )));
